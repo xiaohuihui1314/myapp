@@ -11,7 +11,7 @@ import Swiper from 'react-native-swiper';
 export default class Carousel  extends Component {
     render() {
         return (
-            <Swiper height={300}>
+            <Swiper height={300} autoplay={true}>
                 <View style={styles.slide1}>
                     <Text style={styles.text}>Hello huihui</Text>
                 </View>
