@@ -4,48 +4,35 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View
 } from 'react-native';
+import Carousel  from './public/pages/Carousel';
 
 export default class myapp extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          hello world !
-        </Text>
-
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View>
+                <Carousel/>
+                <Text style={appStyle.text}>
+                    hello react-native !
+                </Text>
+            </View>
+        )
+    }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+const appStyle =  StyleSheet.create({
+    text:{
+        marginTop:15,
+        textAlign: 'center',
+        fontSize: 28,
+        color:'#000',
+        fontWeight: 'bold'
+    }
 });
-
 AppRegistry.registerComponent('myapp', () => myapp);
