@@ -11,7 +11,7 @@ import Swiper from 'react-native-swiper';
 export default class Carousel  extends Component {
     render() {
         return (
-            <Swiper height={300} autoplay={true}>
+            <Swiper height={300} style={styles.wrapper} autoplay={true}>
                 <View style={styles.slide1}>
                     <Text style={styles.text}>Hello huihui</Text>
                 </View>
@@ -26,6 +26,10 @@ export default class Carousel  extends Component {
     }
 }
 const styles =  StyleSheet.create({
+    wrapper:{
+        position: 'absolute',
+        top:40
+    },
     slide1: {
         flex: 1,
         justifyContent: 'center',

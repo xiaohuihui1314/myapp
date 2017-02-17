@@ -11,14 +11,17 @@ import {
     StyleSheet,
     Navigator,
     Text,
-    ScrollView,
+    ListView,
     View,
     StatusBar,
-    TouchableHighlight
+    TouchableHighlight,
+    Platform,
+    Dimensions
 } from 'react-native';
 import Carousel  from './public/pages/Carousel';
 import Test  from './public/pages/Test';
 import SimpleView  from './public/pages/Navigator';
+import List  from './public/pages/ListView';
 
 
 
@@ -35,8 +38,15 @@ class CustomButton extends  Component {
         );
     }
 }
-
+const { width, height } = Dimensions.get('window')
 const styles = StyleSheet.create({
+    listViewContent: {
+        flex: 1,
+        paddingBottom: 20,
+        marginBottom: 0,
+        backgroundColor: '#FFEFDB',
+        height: height - 49 - (Platform.OS === 'ios' ? 64 : 44),
+    },
     button: {
         backgroundColor: '#9DD6EB',
         padding: 15,
@@ -48,7 +58,7 @@ const styles = StyleSheet.create({
 export default class myapp extends Component {
     render() {
         return (
-            <ScrollView contentContainerStyle={{ paddingVertical: 20}}>
+
             <View>
                 <StatusBar
                     backgroundColor='#9DD6EB'
@@ -56,14 +66,14 @@ export default class myapp extends Component {
                     hidden={false}
                     animated={true}
                 />
-                <SimpleView/>
-                <Carousel/>
+                <SimpleView title={'首页'}/>
+
                 <Test/>
             </View>
-            </ScrollView>
+
         )
     }
 }
 
 
-AppRegistry.registerComponent('myapp', () => myapp);
+AppRegistry.registerComponent('myapp', () => List);
